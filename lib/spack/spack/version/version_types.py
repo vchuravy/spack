@@ -590,6 +590,12 @@ class GitVersion(ConcreteVersion):
         return self._with_constraint(version)
 
     @property
+    def dotted_numeric_string(self) -> str:
+        """The dotted numeric string of the Spack version assigned to this git ref, e.g. for
+        compilers built from a git commit."""
+        return self.ref_version.dotted_numeric_string
+
+    @property
     def ref_version(self) -> StandardVersion:
         """The Spack version assigned to this git ref, used for ordering.
 
